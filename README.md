@@ -66,7 +66,7 @@ Users can do the following:
 Admins can do the following:
 
 - Login or logout to the admin panel
-- View all the information stored in the database. They can view/add/edit/delete orders, users, music producst and categories. The cart model cannot be modified by an admin because a cart is either modified by the logged in user before the purchase or deleted after the purchase.
+- View all the information stored in the database. They can view/add/edit/delete orders, users, music products and categories. The cart model cannot be modified by an admin because a cart is either modified by the logged in user before the purchase or deleted after the purchase.
 
 ## Database
 

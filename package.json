@@ -47,10 +47,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BibinFrancisK/amuser-the-online-music-store.git"
+    "url": "git+ssh://git@github.com/BibinFrancisK/amuser.git"
   },
+  "homepage": "https://github.com/BibinFrancisK/amuser.git#readme",
   "bugs": {
-    "url": "https://github.com/BibinFrancisK/amuser-the-online-music-store/issues"
-  },
-  "homepage": "https://github.com/BibinFrancisK/amuser-the-online-music-store#readme"
+    "url": "https://github.com/BibinFrancisK/amuser.git/issues"
+  }
 }

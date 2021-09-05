@@ -1,6 +1,8 @@
 const express = require("express");
 const csrf = require("csurf");
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
+//new
+const stripe_pub = require("stripe")(process.env.STRIPE_PUBLIC_KEY);
 const Product = require("../models/product");
 const Category = require("../models/category");
 const Cart = require("../models/cart");
@@ -199,8 +201,11 @@ router.get("/removeAll/:id", async function (req, res, next) {
 });
 
 // GET: checkout form with csrf token
+//new
 router.get("/checkout", middleware.isLoggedIn, async (req, res) => {
+
   const errorMsg = req.flash("error")[0];
+  key: stripe_pub;
 
   if (!req.session.cart) {
     return res.redirect("/shopping-cart");
@@ -217,6 +222,8 @@ router.get("/checkout", middleware.isLoggedIn, async (req, res) => {
   });
 });
 
+
+//new
 // POST: handle checkout logic and payment using Stripe
 router.post("/checkout", middleware.isLoggedIn, async (req, res) => {
   if (!req.session.cart) {
@@ -226,8 +233,9 @@ router.post("/checkout", middleware.isLoggedIn, async (req, res) => {
   stripe.charges.create(
     {
       amount: cart.totalCost * 100,
-      currency: "usd",
-      source: req.body.stripeToken,
+      currency: "inr",
+      //source: req.body.stripeToken,
+      source: "tok_visa",
       description: "Test charge",
     },
     function (err, charge) {
